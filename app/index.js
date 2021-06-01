@@ -112,7 +112,7 @@ class App extends React.Component {
                 })
               : this.state.filteredData.map(({ user_name, email_address, phone_number, department, isOnline, favorite_color, toggled }, index) => {
                   return (
-                    <FadeIn key={index} onClick={this.updateCheckbox}>
+                    <FadeIn key={index}>
                       <UserProfile user_name={user_name} email_address={email_address} phone_number={phone_number} favorite_color={favorite_color} department={department} isOnline={isOnline} toggled={toggled} updateCheckbox={this.updateCheckbox} />
                     </FadeIn>
                   )
