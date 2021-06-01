@@ -44,7 +44,6 @@ class App extends React.Component {
   updateCheckbox = event => {
     event.preventDefault()
     //update toggle state
-    console.log("update", event.target.textContent)
     let newUsers
     if (!this.state.filteredData) {
       newUsers = this.state.users.map(user => {
@@ -56,7 +55,6 @@ class App extends React.Component {
       })
       this.setState({ users: newUsers })
     } else {
-      console.log("does exist")
       newUsers = this.state.filteredData.map(user => {
         if (user.user_name != event.target.textContent) return user
         return {
@@ -70,7 +68,6 @@ class App extends React.Component {
   handleChange = event => {
     const name = event.target.name
     const value = event.target.value
-    console.log(name, value)
 
     this.setState(
       {
@@ -82,7 +79,6 @@ class App extends React.Component {
     )
   }
   filteredData() {
-    console.log("the filter")
     let newData = this.state.users.filter(({ user_name, email_address }, index) => {
       let userName = user_name.toLowerCase()
       let emailAddress = email_address.toLowerCase()
@@ -97,9 +93,6 @@ class App extends React.Component {
       {
         filteredData: newData
       },
-      () => {
-        console.log("aight last", this.state)
-      }
     )
   }
   render() {
