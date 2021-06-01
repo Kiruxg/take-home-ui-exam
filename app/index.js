@@ -42,6 +42,7 @@ class App extends React.Component {
   }
 
   updateCheckbox = event => {
+    console.log("logged")
     event.preventDefault()
     //update toggle state
     let newUsers
@@ -89,11 +90,9 @@ class App extends React.Component {
         return true
       }
     })
-    this.setState(
-      {
-        filteredData: newData
-      },
-    )
+    this.setState({
+      filteredData: newData
+    })
   }
   render() {
     return (
@@ -106,14 +105,14 @@ class App extends React.Component {
             {!this.state.filteredData
               ? this.state.users.map(({ user_name, email_address, phone_number, department, isOnline, favorite_color, toggled }, index) => {
                   return (
-                    <FadeIn key={index}>
-                      <UserProfile user_name={user_name} email_address={email_address} phone_number={phone_number} favorite_color={favorite_color} department={department} isOnline={isOnline} toggled={toggled} updateCheckbox={this.updateCheckbox} />
+                    <FadeIn key={index} >
+                      <UserProfile  user_name={user_name} email_address={email_address} phone_number={phone_number} favorite_color={favorite_color} department={department} isOnline={isOnline} toggled={toggled} updateCheckbox={this.updateCheckbox} />
                     </FadeIn>
                   )
                 })
               : this.state.filteredData.map(({ user_name, email_address, phone_number, department, isOnline, favorite_color, toggled }, index) => {
                   return (
-                    <FadeIn key={index}>
+                    <FadeIn key={index} onClick={this.updateCheckbox}>
                       <UserProfile user_name={user_name} email_address={email_address} phone_number={phone_number} favorite_color={favorite_color} department={department} isOnline={isOnline} toggled={toggled} updateCheckbox={this.updateCheckbox} />
                     </FadeIn>
                   )

@@ -3,11 +3,10 @@ import FadeIn from "react-fade-in"
 
 export default function UserProfile(props) {
   return (
-    <label className="user__profile" onClick={props.updateCheckbox}>
+    <label className="user__profile"  onClick={props.updateCheckbox} >
       <input type="checkbox" className="user__checkbox" id="user-toggle" name="toggled" />
-      <div>
-        <span className={props.isOnline ? "user__online" : "user__offline"}></span>
-        <img src={`https://ui-avatars.com/api/?name=${props.user_name}&background=${props.favorite_color}&color=fff&rounded=true`} alt="profile" className="user__image" />
+      <div >
+        <img onClick={props.updateCheckbox} src={`https://ui-avatars.com/api/?name=${props.user_name}&background=${props.favorite_color}&color=fff&rounded=true`} alt="profile" className="user__image" />
       </div>
       <p className="user__name">{props.user_name}</p>
       <FadeIn className="user__card">

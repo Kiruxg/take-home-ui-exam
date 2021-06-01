@@ -55,7 +55,6 @@ input:focus::placeholder {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  cursor: pointer;
 }
 .user__profile .purple {
   background-color: purple;
@@ -72,6 +71,7 @@ input:focus::placeholder {
   color: #16171b;
   font-size: 1.2rem;
   flex-grow: 1;
+  cursor: pointer;
 }
 .user__profile input {
   display: none;
