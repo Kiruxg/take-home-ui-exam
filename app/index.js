@@ -102,7 +102,6 @@ class App extends React.Component {
           <section id="search">
             <input onChange={this.handleChange} className="search" name="search" value={this.state.search} type="text" placeholder="Search for Users.." />
           </section>
-          {/* <div className="user__details">{this.loopItems()}</div> */}
           <div className="user__details">
             {!this.state.filteredData
               ? this.state.users.map(({ user_name, email_address, phone_number, department, isOnline, favorite_color, toggled }, index) => {
