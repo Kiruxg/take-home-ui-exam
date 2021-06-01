@@ -57,9 +57,6 @@ input:focus::placeholder {
   padding: 20px;
   cursor: pointer;
 }
-.user__profile:not(:last-child) {
-  border-bottom: 2px solid #dadbd3;
-}
 .user__profile .purple {
   background-color: purple;
 }
